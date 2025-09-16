@@ -1,0 +1,53 @@
+/* Latar gradien bergerak */
+body {
+  background: linear-gradient(-45deg, #ff6ec4, #7873f5, #4ADEDE, #FF9F45);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  font-family: 'Segoe UI', sans-serif;
+}
+@keyframes gradientMove {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
+}
+
+/* Fade in untuk container */
+.fade-in { animation: fade 1.2s ease-in; }
+@keyframes fade { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+
+/* Hover scale row */
+.scale-hover:hover {transform: scale(1.02); transition: transform .3s ease;}
+
+/* Neon text */
+.neon-text {
+  color: #fff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #ff6ec4, 0 0 30px #ff6ec4;
+}
+
+/* Glass effect form card */
+.glass-card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Button pulse animation */
+.pulse {
+  position: relative;
+  overflow: hidden;
+}
+.pulse::after {
+  content:'';
+  position:absolute;
+  top:-50%;
+  left:-50%;
+  width:200%;
+  height:200%;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  animation: pulseAnim 2s infinite;
+}
+@keyframes pulseAnim {
+  0% {transform: scale(0); opacity:1;}
+  100% {transform: scale(1); opacity:0;}
+}
